@@ -1,0 +1,1 @@
+export function groupBy(items, key) {  const getKey = typeof key === "function" ? key : (item) => item[key];  return items.reduce((acc, item) => {    const k = String(getKey(item));    (acc[k] ??= []).push(item);    return acc;  }, {});}
